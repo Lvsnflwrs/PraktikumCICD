@@ -99,15 +99,15 @@ jobs:
         uses: actions/checkout@v4
 
       # Jika ada langkah build sebelum deploy (misalnya, optimasi aset)
-      # - name: Build Halaman Web (jika perlu)
-      #   run: npm install && npm run build-static
+      - name: Build Halaman Web (jika perlu)
+        run: npm install && npm run build-static
 
       - name: Deploy ke GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./ 
-          # publish_branch: gh-pages
-          # user_name: 'github-actions[bot]'
-          # user_email: 'github-actions[bot]@users.noreply.github.com'
-          # commit_message: 'Deploy kalkulator ke GitHub Pages'
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy kalkulator ke GitHub Pages'
